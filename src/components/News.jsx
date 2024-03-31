@@ -23,7 +23,7 @@ export default function News({ category }) {
 
     return (
         <div>
-            <h2 className="text-center"><span className="">News</span></h2>
+            <h2 className="text-center mt-2"><span>News</span></h2>
         
             {news.map((item, id) => {
                 return (
