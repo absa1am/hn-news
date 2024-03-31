@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import NewsItem from "./NewsItem";
+import Item from "./Item";
 import axios from "axios";
 
-function NewsBoard({ category }) {
-    const [articles, setArticles] = useState([]);
+export default function News({ category }) {
+    const [news, setNews] = useState([]);
 
     useEffect(() => {
         let url = `https://hn.algolia.com/api/v1/search?query=`;
@@ -12,7 +12,7 @@ function NewsBoard({ category }) {
             try {
                 const response = await axios.get(url);
 
-                setArticles(response.data.hits);
+                setNews(response.data.hits);
             } catch (error) {
                 console.error("Error fetching news: ", error);
             }
@@ -25,13 +25,11 @@ function NewsBoard({ category }) {
         <div>
             <h2 className="text-center"><span className="">News</span></h2>
         
-            {articles.map((news, id) => {
+            {news.map((item, id) => {
                 return (
-                    <NewsItem key={id} title={news.title} points={news.points} author={news.author} numComments={news.num_comments} url={news.url} />
+                    <Item key={id} title={item.title} points={item.points} author={item.author} numComments={item.num_comments} url={item.url} />
                 );
             })}
         </div>
     );
 }
-
-export default NewsBoard;

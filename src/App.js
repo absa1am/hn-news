@@ -1,13 +1,9 @@
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import NewsBoard from "./components/NewsBoard";
-import { RouterProvider } from "react-router-dom";
-import { routes } from "./routes";
+import News from "./components/News";
 
 function App() {
     return (
         <div>
-            <NewsBoard />
+            <News />
         </div>
     );
 }
