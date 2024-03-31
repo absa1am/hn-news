@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Item from "./Item";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 export default function News({ category }) {
+    const [loading, setLoading] = useState(true);
     const [news, setNews] = useState([]);
 
     useEffect(() => {
@@ -13,6 +15,7 @@ export default function News({ category }) {
                 const response = await axios.get(url);
 
                 setNews(response.data.hits);
+                setLoading(false);
             } catch (error) {
                 console.error("Error fetching news: ", error);
             }
@@ -22,14 +25,19 @@ export default function News({ category }) {
     }, []);
 
     return (
-        <div>
-            <h2 className="text-center mt-2"><span>News</span></h2>
-        
-            {news.map((item, id) => {
-                return (
-                    <Item key={id} title={item.title} points={item.points} author={item.author} numComments={item.num_comments} url={item.url} />
-                );
-            })}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+            {loading? (<Spinner />
+            ) : (
+                <div>
+                    <h2 className="text-center mt-2"><span>News</span></h2>
+                
+                    {news.map((item, id) => {
+                        return (
+                            <Item key={id} title={item.title} points={item.points} author={item.author} numComments={item.num_comments} url={item.url} />
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 }
