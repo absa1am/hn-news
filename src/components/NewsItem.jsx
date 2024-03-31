@@ -1,11 +1,12 @@
-function NewsItem({ title, description, src, url }) {
+function NewsItem({ title, author, points, url, numComments }) {
     return (
-        <div className="card bg-dark text-light mb-3 d-inline-block mx-3 my-3 px-3 py-3" style={{ maxWidth: "345px" }}>
-            <img src={src} className="card-img-top" style={{ height: "200px", width: "310px" }} alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{ title.slice(0, 50) }</h5>
-                <p className="card-text">{description? description.slice(0, 90) : "No description"}</p>
-                <a href={url} className="btn btn-primary">Read more</a>
+        <div className="card mb-3 d-inline-block mx-3 my-3 px-3 py-3">
+            <div class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between align-items-center">
+                    <a class="mb-1" href={url} target="_blank">{title} ({url})</a>
+                </div>
+                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                <small class="text-body-secondary">{points} points | {author} | {numComments} comments</small>
             </div>
         </div>
     );
