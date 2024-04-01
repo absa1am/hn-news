@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Item from './Item';
-import Spinner from './Spinner';
+import Board from './Board';
 
 export default function Jobs() {
     const [loadingId, setLoadingId] = useState(true);
@@ -54,17 +53,6 @@ export default function Jobs() {
     }, [jobStoryIds]);
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-            {(loadingId || loadingJob) ? (
-                <Spinner />
-            ) : (
-                <div>
-                    <h2 className="text-center mt-2"><span>Jobs</span></h2>
-                    {jobs.map((job, id) => (
-                        <Item key={id} title={job.title} points={job.score} author={job.by} url={job.url} />
-                    ))}
-                </div>
-            )}
-        </div>
+        <Board loadingId={loadingId} laodingTask={loadingJob} data={jobs} boardTitle={"Jobs"} />
     );
 }

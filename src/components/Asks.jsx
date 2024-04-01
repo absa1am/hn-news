@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Spinner from "./Spinner";
-import Item from "./Item";
+import Board from "./Board";
 
 export default function Asks() {
     const [loadingIds, setLoadingIds] = useState(true);
@@ -52,17 +51,6 @@ export default function Asks() {
     }, [asksIds]);
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
-            {(loadingIds || laodingAsks) ? (
-                <Spinner />
-            ) : (
-                <div>
-                    <h2 className="text-center mt-2"><span>Asks</span></h2>
-                    {asks.map((ask, id) => (
-                        <Item key={id} title={ask.title} points={ask.score} author={ask.by} url={ask.url} />
-                    ))}
-                </div>
-            )}
-        </div>
+        <Board loadingId={loadingIds} laodingTask={laodingAsks} data={asks} boardTitle={"Asks"} />
     );
 }

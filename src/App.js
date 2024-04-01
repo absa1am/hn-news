@@ -1,10 +1,9 @@
-import News from "./components/News";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
 
 function App() {
     return (
-        <div>
-            <News />
-        </div>
+        <RouterProvider router={routes} />
     );
 }
 
