@@ -8,7 +8,7 @@ export default function Item({ title, author, text, points, url, ncomments }) {
                     </span>
                 </div>
                 { text && <p>{text}</p> }
-                <small className="text-body-secondary">{points} points | {author} {ncomments && `(| ${ncomments} comments`}</small>
+                <small className="text-body-secondary">{points} points | {author} {ncomments && `| ${ncomments} comments`}</small>
             </div>
         </div>
     );
