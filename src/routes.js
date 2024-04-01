@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import News from "./components/News";
-import Layout from "./components/Layout";
+import Layout from "./components/layouts/Layout";
 import Jobs from "./components/Jobs";
 import Asks from "./components/Asks";
 
