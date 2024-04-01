@@ -49,9 +49,8 @@ export default function Jobs() {
             setJobs(fetchedStories);
         };
 
-        if (jobStoryIds.length > 0) {
-            fetchJobStories();
-        }
+
+        fetchJobStories();
     }, [jobStoryIds]);
 
     return (
