@@ -12,7 +12,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={darkMode ? "dark" : "light"}>
+        <nav className="navbar navbar-expand-lg bg-warning" data-bs-theme={darkMode && "dark"}>
             <div className="container-fluid">
                 <a className="navbar-brand border p-1" href="/">HN</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
