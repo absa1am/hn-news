@@ -13,15 +13,7 @@ export default function Board({loadingId, laodingTask, data, boardTitle}) {
                     </h2>
 
                     <div className="d-flex justify-content-start align-items-center m-3">
-                        Search
-                        <select className="rounded border bg-white m-2 p-1">
-                            <option value={"All"}>All</option>
-                            <option value={"News"}>News</option>
-                            <option value={"Jobs"}>Jobs</option>
-                            <option value={"Asks"}>Asks</option>
-                            <option value={"Show"}>Show</option>
-                        </select>
-                        by
+                        Search by
                         <select className="rounded border bg-white m-2 p-1">
                             <option value={"Popularity"}>Popularity</option>
                             <option value={"Date"}>Date</option>
