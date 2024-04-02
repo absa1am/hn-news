@@ -14,12 +14,12 @@ export default function Board({loadingId, laodingTask, data, boardTitle}) {
 
                     <div className="d-flex justify-content-start align-items-center m-3">
                         Search by
-                        <select className="rounded border bg-white m-2 p-1">
+                        <select className="rounded border m-2 p-1">
                             <option value={"Popularity"}>Popularity</option>
                             <option value={"Date"}>Date</option>
                         </select>
                         for
-                        <select className="rounded border bg-white m-2 p-1">
+                        <select className="rounded border m-2 p-1">
                             <option value={"All time"}>All time</option>
                             <option value={"Last 24h"}>Last 24h</option>
                             <option value={"Past Week"}>Past Week</option>
