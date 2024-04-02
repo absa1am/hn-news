@@ -1,6 +1,18 @@
-function Navbar() {
+import { useState } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+
+function Navbar({ isDarkMode, toggleDarkMode }) {
+    const [darkMode, setDarkMode] = useState(isDarkMode);
+
+    const handleDarkModeToggle = () => {
+
+        setDarkMode(!darkMode);
+        
+        toggleDarkMode();
+    };
+
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={darkMode ? "dark" : "light"}>
             <div className="container-fluid">
                 <a className="navbar-brand border p-1" href="/">HN</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +32,9 @@ function Navbar() {
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="/show">Show</a>
                         </li>
+                        <div className="m-2" onClick={handleDarkModeToggle}>
+                            {darkMode ? <MdLightMode fontSize={25} /> : <MdDarkMode fontSize={25} />}
+                        </div>
                     </ul>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
