@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 function Navbar({ isDarkMode, toggleDarkMode }) {
     const [darkMode, setDarkMode] = useState(isDarkMode);
 
     const handleDarkModeToggle = () => {
-
         setDarkMode(!darkMode);
-        
         toggleDarkMode();
     };
+
+    useEffect(() => {
+        localStorage.setItem("darkMode", JSON.stringify(darkMode));
+    }, [darkMode]);
 
     return (
         <nav className="navbar navbar-expand-lg bg-warning" data-bs-theme={darkMode && "dark"}>
