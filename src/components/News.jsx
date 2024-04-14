@@ -7,7 +7,7 @@ export default function News({ category }) {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
-        let url = `https://hn.algolia.com/api/v1/search?query=`;
+        let url = `http://hn.algolia.com/api/v1/search_by_date?tags=(story,polls)`;
 
         const fetchNews = async () => {
             try {

@@ -3,6 +3,7 @@ import News from "./components/News";
 import Layout from "./components/layouts/Layout";
 import Jobs from "./components/Jobs";
 import Asks from "./components/Asks";
+import Shows from "./components/Shows";
 
 export const routes = createBrowserRouter([
     {
@@ -20,5 +21,9 @@ export const routes = createBrowserRouter([
     {
         path: "/asks",
         element: <Layout children={<Asks />} />
+    },
+    {
+        path: "/shows",
+        element: <Layout children={<Shows />} />
     }
 ]);
