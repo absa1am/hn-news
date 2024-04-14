@@ -29,7 +29,7 @@ export default function Board({loadingId, laodingTask, data, boardTitle}) {
                     </div>
                     
                     {data.map((item, id) => (
-                        <Item key={id} title={item.title} points={item.score? item.score:item.points} author={item.by? item.by:item.author} url={item.url} ncomments={item.num_comments? item.num_comments:""} />
+                        <Item key={id} title={item.title} points={item.score? item.score:item.points} author={item.by? item.by:item.author} url={item.url} ncomments={item.num_comments >=0 ? `${item.num_comments}`:""} createdAt={item.created_at} />
                     ))}
                 </div>
             )}

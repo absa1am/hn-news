@@ -32,7 +32,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
                             <a className="nav-link active" aria-current="page" href="/asks">Asks</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/show">Show</a>
+                            <a className="nav-link active" aria-current="page" href="/shows">Show</a>
                         </li>
                         <div className="m-2" onClick={handleDarkModeToggle}>
                             {darkMode ? <MdLightMode fontSize={25} /> : <MdDarkMode fontSize={25} />}
