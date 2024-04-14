@@ -7,7 +7,7 @@ export default function Asks() {
     const [asks, setAsks] = useState([]);
 
     useEffect(() => {
-        let url = `http://hn.algolia.com/api/v1/search_by_date?tags=ask_hn`;
+        let url = `https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn`;
 
         const fetchAsks = async () => {
             try {

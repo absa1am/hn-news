@@ -7,7 +7,7 @@ export default function Shows({ category }) {
     const [shows, setShows] = useState([]);
 
     useEffect(() => {
-        let url = `http://hn.algolia.com/api/v1/search_by_date?tags=show_hn`;
+        let url = `https://hn.algolia.com/api/v1/search_by_date?tags=show_hn`;
 
         const fetchShows = async () => {
             try {
