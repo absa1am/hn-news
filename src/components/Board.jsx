@@ -1,7 +1,11 @@
 import Item from "./Item";
 import Spinner from "./Spinner";
 
-export default function Board({loadingId, laodingTask, data, boardTitle}) {
+export default function Board({loadingId, laodingTask, data, boardTitle, handleSearch}) {
+    const handleChange = (e) => {
+        handleSearch(e.target.value);
+    };
+
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
             {(loadingId || laodingTask) ? (
@@ -14,9 +18,9 @@ export default function Board({loadingId, laodingTask, data, boardTitle}) {
 
                     <div className="d-flex justify-content-start align-items-center m-3">
                         Search by
-                        <select className="rounded border m-2 p-1">
-                            <option value={"Popularity"}>Popularity</option>
-                            <option value={"Date"}>Date</option>
+                        <select className="rounded border m-2 p-1" onChange={(e) => handleChange(e)} defaultValue={"Date"}>
+                            <option value={"date"}>Date</option>
+                            <option value={"popularity"}>Popularity</option>
                         </select>
                         for
                         <select className="rounded border m-2 p-1">
