@@ -5,10 +5,9 @@ import Board from "./Board";
 export default function Asks() {
     const [loading, setLoading] = useState(true);
     const [asks, setAsks] = useState([]);
+    const [url, setUrl] = useState("https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn");
 
     useEffect(() => {
-        let url = `https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn`;
-
         const fetchAsks = async () => {
             try {
                 const response = await axios.get(url);
@@ -21,9 +20,17 @@ export default function Asks() {
         }
 
         fetchAsks();
-    }, []);
+    }, [url]);
+
+    const handleSearch = (value) => {
+        if (value === "popularity") {
+            setUrl("https://hn.algolia.com/api/v1/search?tags=ask_hn&numericFilters=points>0");
+        } else if (value === "date") {
+            setUrl("https://hn.algolia.com/api/v1/search_by_date?tags=ask_hn");
+        }
+    }
 
     return (
-        <Board loadingId={loading} loadingTask={loading} data={asks} boardTitle={"Asks"} />
+        <Board loadingId={loading} loadingTask={loading} data={asks} boardTitle={"Asks"} handleSearch={handleSearch} />
     );
 }
