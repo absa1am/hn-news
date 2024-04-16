@@ -13,7 +13,7 @@ export default function Board({loadingId, laodingTask, data, boardTitle, handleS
         handleSearch(e.target.value);
     };
 
-    const filteredData = data.filter((item) => item.title.includes(searchQuery) || (item.authro && item.author.includes(searchQuery)) || (item.url && item.url.includes(searchQuery)));
+    const filteredData = data.filter((item) => item.title.toLowerCase().includes(searchQuery.toLowerCase()) || (item.author && item.author.toLowerCase().includes(searchQuery.toLowerCase())) || (item.url && item.url.toLowerCase().includes(searchQuery.toLowerCase())));
 
     return (
         <div>
