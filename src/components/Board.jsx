@@ -38,7 +38,7 @@ export default function Board({loadingId, laodingTask, data, boardTitle, handleS
                             </div>
 
                             <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Search" value={searchQuery} onChange={ handleSearchQuery } aria-label="Search" />
+                                <input className="form-control me-2" type="search" placeholder="Search by title, author or url" value={searchQuery} onChange={ handleSearchQuery } aria-label="Search" />
                             </form>
                         </div>
                         
