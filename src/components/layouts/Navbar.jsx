@@ -38,10 +38,6 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
                             {darkMode ? <MdLightMode fontSize={25} /> : <MdDarkMode fontSize={25} />}
                         </div>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
